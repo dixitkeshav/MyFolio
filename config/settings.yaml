@@ -1,0 +1,48 @@
+# General System Settings
+system:
+  name: "Quant Edge Trading Platform"
+  version: "1.0.0"
+  mode: "paper"  # paper | live | backtest
+
+# Data Refresh Intervals (seconds)
+data_refresh:
+  market_data: 60  # 1 minute
+  economic_data: 3600  # 1 hour
+  news_data: 900  # 15 minutes
+  sentiment_data: 300  # 5 minutes
+
+# Default Timeframes
+timeframes:
+  default: "1d"  # 1m, 5m, 15m, 1h, 1d, 1w
+  backtest: "1d"
+  live_trading: "1h"
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG | INFO | WARNING | ERROR
+  file: "logs/trading.log"
+  console: true
+  max_file_size_mb: 10
+  backup_count: 5
+
+# UI Configuration
+ui:
+  theme: "dark"
+  chart_theme: "dark"
+  default_symbols: ["SPY", "QQQ", "DIA"]
+  update_interval: 1  # seconds
+
+# Strategy Defaults
+strategy:
+  default_risk_per_trade: 0.01  # 1%
+  default_stop_loss_pct: 0.05  # 5%
+  default_take_profit_pct: 0.10  # 10%
+  require_all_layers: true  # All layers must pass
+
+# Performance Metrics
+metrics:
+  risk_free_rate: 0.04  # 4% annual
+  benchmark: "SPY"
+  calculate_sharpe: true
+  calculate_sortino: true
+  calculate_max_drawdown: true
