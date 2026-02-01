@@ -1,0 +1,94 @@
+# Broker Configuration
+
+# Primary Broker
+broker:
+  type: "groww"  # groww | zerodha | upstox | ibkr | tdameritrade
+  name: "Groww"
+  market: "india"  # us | india | both
+
+# Interactive Brokers Configuration
+ibkr:
+  host: "127.0.0.1"
+  port: 7497  # Paper: 7497, Live: 7496
+  client_id: 1
+  timeout: 10
+
+# TD Ameritrade Configuration
+tdameritrade:
+  api_key_env: "TD_AMERITRADE_API_KEY"
+  redirect_uri: "http://localhost"
+  account_id_env: "TD_AMERITRADE_ACCOUNT_ID"
+
+# Order Types Supported
+order_types:
+  market: true
+  limit: true
+  stop: true
+  stop_limit: true
+  trailing_stop: true
+
+# Order Execution
+execution:
+  default_order_type: "limit"
+  use_smart_routing: true
+  slippage_model: "linear"  # linear | sqrt | fixed
+  slippage_bps: 5  # 5 basis points slippage
+
+# Commission Structure
+commission:
+  type: "per_trade"  # per_share | percentage | fixed | per_trade
+  rate: 0.0  # Groww: zero equity delivery
+  min_commission: 0.0
+  max_commission: 0.0
+
+# Position Limits
+position_limits:
+  max_positions: 50
+  max_order_size: 10000  # shares
+  min_order_size: 1  # shares
+
+# Groww Configuration (Indian Market)
+groww:
+  api_key_env: "GROWW_API_KEY"
+  api_secret_env: "GROWW_API_SECRET"
+  user_id_env: "GROWW_USER_ID"
+  base_url: "https://api.groww.in"  # Update with actual Groww API URL
+  market: "india"
+  exchange: "NSE"  # NSE | BSE
+  rate_limit_per_minute: 100
+
+# Zerodha Kite API Configuration (Indian Market)
+zerodha:
+  api_key_env: "ZERODHA_API_KEY"
+  api_secret_env: "ZERODHA_API_SECRET"
+  access_token_env: "ZERODHA_ACCESS_TOKEN"
+  base_url: "https://kite.zerodha.com"
+  market: "india"
+  exchange: "NSE"  # NSE | BSE | NFO | CDS | MCX
+  rate_limit_per_minute: 300
+
+# Upstox API Configuration (Indian Market)
+upstox:
+  api_key_env: "UPSTOX_API_KEY"
+  api_secret_env: "UPSTOX_API_SECRET"
+  access_token_env: "UPSTOX_ACCESS_TOKEN"
+  base_url: "https://api.upstox.com/v2"
+  market: "india"
+  exchange: "NSE"  # NSE | BSE | NFO | CDS | MCX
+  rate_limit_per_minute: 300
+
+# Market Hours - US Market
+market_hours_us:
+  timezone: "America/New_York"
+  pre_market_open: "04:00"
+  market_open: "09:30"
+  market_close: "16:00"
+  after_hours_close: "20:00"
+
+# Market Hours - Indian Market
+market_hours_india:
+  timezone: "Asia/Kolkata"
+  pre_market_open: "09:00"
+  market_open: "09:15"
+  market_close: "15:30"
+  after_hours_close: "15:40"
