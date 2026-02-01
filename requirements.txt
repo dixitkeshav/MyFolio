@@ -1,0 +1,52 @@
+# Core Dependencies
+pandas>=2.0.0
+numpy>=1.24.0
+yfinance>=0.2.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+pyyaml>=6.0
+python-dateutil>=2.8.2
+
+# Data & APIs
+alpha-vantage>=2.3.1
+fredapi>=0.5.0
+newsapi-python>=0.2.7
+finnhub-python>=2.4.0
+polygon-api-client>=1.13.0
+
+# Indian Market APIs
+growwapi>=1.5.0  # Groww trading API (primary Indian broker)
+nsepy>=0.8  # NSE data (PyPI has up to 0.8)
+kiteconnect>=4.0.0  # Zerodha Kite API
+upstox-python-sdk>=1.0.0  # Upstox API
+
+# ML & AI
+scikit-learn>=1.3.0
+transformers>=4.30.0
+torch>=2.0.0
+google-generativeai>=0.8.0  # Gemini for strategy chatbot
+sentencepiece>=0.1.99
+
+# UI & Visualization
+streamlit>=1.28.0
+plotly>=5.17.0
+dash>=2.14.0
+pandas-ta>=0.3.14b0
+dash-bootstrap-components>=1.5.0
+
+# Technical Analysis
+ta-lib>=0.4.28
+pandas-ta>=0.3.14b0
+
+# Database
+sqlalchemy>=2.0.0
+# sqlite3 is built into Python; no pip install needed
+
+# Utilities
+tqdm>=4.66.0
+colorama>=0.4.6
+schedule>=1.2.0
+
+# Testing (Optional)
+pytest>=7.4.0
+pytest-cov>=4.1.0
