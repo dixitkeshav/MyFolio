@@ -1,0 +1,56 @@
+# Risk Management Configuration
+
+# Position Sizing
+position_sizing:
+  method: "fixed_fractional"  # fixed_fractional | kelly | fixed_dollar
+  risk_per_trade: 0.01  # 1% of account per trade
+  max_position_size_pct: 0.10  # 10% max per position
+  min_position_size: 100  # Minimum $100 position
+
+# Drawdown Control
+drawdown:
+  max_drawdown_pct: 0.15  # 15% max drawdown
+  reduce_risk_at_drawdown: 0.10  # Reduce risk at 10% drawdown
+  kill_switch_drawdown: 0.20  # Kill switch at 20% drawdown
+  reduce_risk_multiplier: 0.5  # Reduce position sizes by 50% when drawdown hits
+
+# Daily Limits
+daily_limits:
+  max_daily_loss_pct: 0.05  # 5% max daily loss
+  max_daily_trades: 20  # Max trades per day
+  stop_trading_on_daily_limit: true
+
+# Exposure Limits
+exposure:
+  max_total_exposure_pct: 1.0  # 100% max total exposure
+  max_sector_exposure_pct: 0.25  # 25% max per sector
+  max_correlation_exposure_pct: 0.30  # 30% max correlated positions
+  max_single_position_pct: 0.10  # 10% max single position
+
+# Stop Loss & Take Profit
+stop_loss:
+  default_stop_loss_pct: 0.05  # 5% default stop loss
+  use_atr_multiplier: true  # Use ATR-based stops
+  atr_multiplier: 2.0  # 2x ATR for stop distance
+  trailing_stop_enabled: true
+  trailing_stop_pct: 0.03  # 3% trailing stop
+
+take_profit:
+  default_take_profit_pct: 0.10  # 10% default take profit
+  use_rr_ratio: true  # Use risk-reward ratio
+  min_rr_ratio: 2.0  # Minimum 2:1 risk-reward
+
+# Risk Checks
+risk_checks:
+  pre_trade_check: true
+  post_trade_check: true
+  continuous_monitoring: true
+  validate_orders: true
+
+# Kill Switch
+kill_switch:
+  enabled: true
+  trigger_on_max_drawdown: true
+  trigger_on_daily_limit: true
+  trigger_on_risk_violation: true
+  auto_close_positions: false  # Set to true for aggressive protection
